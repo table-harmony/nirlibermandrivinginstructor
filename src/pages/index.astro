@@ -3,21 +3,24 @@ import MainLayout from '../layouts/Main.astro'
 
 import { Image } from 'astro:assets'
 
+import {
+  Card,
+  CardTitle,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+} from '../components/ui/card'
 import { Check, Star } from 'lucide-react'
-
-const numStudens = 30
 ---
 
 <MainLayout>
-  <div class="grainy-light">
+  <div class="grainy-dark">
     <section
-      class="mx-auto max-w-7xl place-items-center pb-24 pt-10 sm:grid sm:pb-32 lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:pb-52 lg:pt-32"
+      class="container mx-auto place-items-center pb-24 pt-10 sm:grid sm:pb-32 lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:pb-52 lg:pt-32"
     >
       <div class="flex flex-col space-y-8">
-        <h1
-          class="text-5xl font-bold !leading-[4rem] tracking-tight md:text-7xl"
-        >
-          לימוד נהיגה
+        <h1 class="text-5xl font-bold tracking-tight md:text-7xl">
+          מורה נהיגה
         </h1>
 
         <p class="text-balance text-lg md:text-wrap">
@@ -39,30 +42,83 @@ const numStudens = 30
             </li>
           </div>
         </ul>
-
-        <div class="flex items-center gap-10">
-          <div>Hello</div>
-
-          <div class="flex flex-col">
-            <div class="flex gap-0.5">
-              <Star className="fill-black" />
-              <Star className="fill-black" />
-              <Star className="fill-black" />
-              <Star className="fill-black" />
-              <Star className="fill-black" />
-            </div>
-            <p>
-              <span class="font-semibold">{numStudens}</span>
-              תלמידים מרוצים
-            </p>
-          </div>
-        </div>
       </div>
       <div
-        class="-m-2 rounded-xl bg-neutral-900/5 p-2 ring-1 ring-inset ring-neutral-900/10 dark:bg-neutral-100/10 lg:-m-4 lg:rounded-2xl lg:p-4"
+        class="m-2 rounded-xl bg-neutral-900/5 p-2 ring-1 ring-inset ring-neutral-900/10 dark:bg-neutral-100/10 lg:-m-4 lg:rounded-2xl lg:p-4"
       >
         <Image src="/logo.png" alt="logo" width="500" height="300" />
       </div>
     </section>
   </div>
+
+  <section class="grainy-light pb-24 pt-10">
+    <div class="mb-20">
+      <h2
+        class="text-center text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]"
+      >
+        חוות דעת
+      </h2>
+    </div>
+
+    <div class="container sm:grid lg:grid-cols-3 lg:gap-x-8 lg:px-8">
+      <Card className="flex h-[200px] flex-col justify-between">
+        <CardHeader>
+          <CardDescription
+            >ניר מורה מדהים. כל שיעור הוא חוויה בפני עצמה, הוא תומך, מצחיק ונותן
+            תחושת ביטחון בכל שיעור. נהנתי מכל רגע איתו והוא בהחלט הבחירה הנכונה.
+          </CardDescription>
+        </CardHeader>
+        <CardFooter
+          className="flex flex-col items-center justify-between gap-2 sm:flex-row"
+        >
+          <div class="flex gap-2">
+            <Image
+              alt="profile"
+              src="https://lh3.googleusercontent.com/a/ACg8ocLFhCgTZXN29gbTR9omCYCrfN3VVC8BSp2EvUnpuczIN2a2fQ=s96-c"
+              width="25"
+              height="25"
+              class="rounded-full"
+            />
+            <span class="text-muted-foreground">Itay Yosha</span>
+          </div>
+          <div class="flex gap-0.5">
+            <Star className="fill-black" />
+            <Star className="fill-black" />
+            <Star className="fill-black" />
+            <Star className="fill-black" />
+            <Star className="fill-black" />
+          </div>
+        </CardFooter>
+      </Card>
+      <Card className="flex h-[200px] flex-col justify-between">
+        <CardHeader>
+          <CardDescription
+            >ניר מורה מצויין, השקיע ועזר למרות שלקח לי הרבה זמן, ואפילו עברתי
+            טסט ראשון
+          </CardDescription>
+        </CardHeader>
+        <CardFooter
+          className="flex flex-col items-center justify-between gap-2 sm:flex-row"
+        >
+          <div class="flex gap-2">
+            <Image
+              alt="profile"
+              src="https://lh3.googleusercontent.com/a/ACg8ocKH4aBbvD57jexJyEIPCasu1KAy7L5j8KOVVBdsDUpYORDnx_Z9=s96-c"
+              width="25"
+              height="25"
+              class="rounded-full"
+            />
+            <span class="text-muted-foreground">Yuval Damti</span>
+          </div>
+          <div class="flex gap-0.5">
+            <Star className="fill-black" />
+            <Star className="fill-black" />
+            <Star className="fill-black" />
+            <Star className="fill-black" />
+            <Star className="fill-black" />
+          </div>
+        </CardFooter>
+      </Card>
+    </div>
+  </section>
 </MainLayout>
