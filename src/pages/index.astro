@@ -1,5 +1,68 @@
 ---
 import MainLayout from '../layouts/Main.astro'
+
+import { Image } from 'astro:assets'
+
+import { Check, Star } from 'lucide-react'
+
+const numStudens = 30
 ---
 
-<MainLayout> Hello world </MainLayout>
+<MainLayout>
+  <div class="grainy-light">
+    <section
+      class="mx-auto max-w-7xl place-items-center pb-24 pt-10 sm:grid sm:pb-32 lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:pb-52 lg:pt-32"
+    >
+      <div class="flex flex-col space-y-8">
+        <h1
+          class="text-5xl font-bold !leading-[4rem] tracking-tight md:text-7xl"
+        >
+          לימוד נהיגה
+        </h1>
+
+        <p class="text-balance text-lg md:text-wrap">
+          לימוד נהיגה ברמה אחרת, באופן מקצועי ללא פשרות ובשיטת לימוד ייחודית.
+          שיעורים באוירה נינוחה וצעירה שמותאמת לכל אחד ואחת. יחס אישי, סבלנות,
+          מקצועיות ואמינות לאורך כל הדרך. הדרך שלי- ההצלחה שלך!
+        </p>
+
+        <ul class="flex flex-col space-y-2 font-medium">
+          <div class="space-y-2">
+            <li class="flex items-center gap-1.5 text-left">
+              <Check className="size-5" /> עזרה בלימוד תאוריה
+            </li>
+            <li class="flex items-center gap-1.5">
+              <Check className="size-5" /> רענון ולימוד נהיגה
+            </li>
+            <li class="flex items-center gap-1.5">
+              <Check className="size-5" /> המרת רישיון זר לישראלי ואוטומטי לידני
+            </li>
+          </div>
+        </ul>
+
+        <div class="flex items-center gap-10">
+          <div>Hello</div>
+
+          <div class="flex flex-col">
+            <div class="flex gap-0.5">
+              <Star className="fill-black" />
+              <Star className="fill-black" />
+              <Star className="fill-black" />
+              <Star className="fill-black" />
+              <Star className="fill-black" />
+            </div>
+            <p>
+              <span class="font-semibold">{numStudens}</span>
+              תלמידים מרוצים
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="-m-2 rounded-xl bg-neutral-900/5 p-2 ring-1 ring-inset ring-neutral-900/10 dark:bg-neutral-100/10 lg:-m-4 lg:rounded-2xl lg:p-4"
+      >
+        <Image src="/logo.png" alt="logo" width="500" height="300" />
+      </div>
+    </section>
+  </div>
+</MainLayout>
