@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets'
+
+import { Button } from '../ui/button'
+---
+
+<section id="hero" class="flex flex-col items-center sm:flex-row">
+  <div class="flex max-w-xl flex-col space-y-8">
+    <h1 class="text-5xl font-bold tracking-tight md:text-7xl">
+      תתחילו ללמוד נהיגה היום
+    </h1>
+
+    <p class="text-balance text-lg md:text-wrap">
+      לימוד נהיגה ברמה אחרת, באופן מקצועי ללא פשרות ובשיטת לימוד ייחודית.
+      שיעורים באוירה נינוחה וצעירה שמותאמת לכל אחד ואחת. יחס אישי, סבלנות,
+      מקצועיות ואמינות לאורך כל הדרך. הדרך שלי- ההצלחה שלך!
+    </p>
+  </div>
+
+  <Image src="/logo.png" alt="logo" width="550" height="250" />
+</section>
+
+<div class="bg-yellow-450 flex items-center justify-between p-12">
+  <span
+    class="text-xl font-bold leading-tight tracking-tighter md:text-3xl lg:leading-[1.1]"
+  >
+    מחפשים שיעור נהיגה מהשורה הראשונה ?
+  </span>
+  <Button className="px-8 py-6">צרו קשר</Button>
+</div>

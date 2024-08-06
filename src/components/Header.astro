@@ -1,24 +1,15 @@
 ---
 import { CarIcon } from 'lucide-react'
-
-import { Button } from './ui/button'
 ---
 
 <header
   class="sticky top-0 z-50 w-full border-b border-border/40 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+  dir="ltr"
 >
-  <div class="container flex h-14 items-center">
-    <a href="/" class="flex items-center gap-2">
-      <CarIcon className="size-8" />
-      <span class="font-bold">ניר ליברמן</span>
+  <div class="container flex h-14 items-center justify-between">
+    <a href="#main" class="flex items-center gap-2 font-semibold">
+      <CarIcon className="size-6" />
+      ניר ליברמן
     </a>
-    <div class="flex items-center gap-2">
-      <a href="#reviews">
-        <Button variant="ghost"> חוות דעת </Button>
-      </a>
-      <a href="#start">
-        <Button variant="ghost"> איך להתחיל </Button>
-      </a>
-    </div>
   </div>
 </header>

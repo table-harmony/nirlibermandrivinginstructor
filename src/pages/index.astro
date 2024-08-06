@@ -1,125 +1,14 @@
 ---
 import MainLayout from '../layouts/Main.astro'
 
-import { Image } from 'astro:assets'
-
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-} from '../components/ui/card'
-import { Check, Star } from 'lucide-react'
+import HeroSection from '../components/sections/Hero.astro'
+import FeaturesSection from '../components/sections/Features.astro'
 ---
 
 <MainLayout>
   <div class="grainy-dark">
-    <section
-      class="container mx-auto place-items-center pb-24 pt-10 sm:grid sm:pb-32 lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:pb-52 lg:pt-32"
-    >
-      <div class="flex flex-col space-y-8">
-        <h1 class="text-5xl font-bold tracking-tight md:text-7xl">
-          מורה נהיגה
-        </h1>
-
-        <p class="text-balance text-lg md:text-wrap">
-          לימוד נהיגה ברמה אחרת, באופן מקצועי ללא פשרות ובשיטת לימוד ייחודית.
-          שיעורים באוירה נינוחה וצעירה שמותאמת לכל אחד ואחת. יחס אישי, סבלנות,
-          מקצועיות ואמינות לאורך כל הדרך. הדרך שלי- ההצלחה שלך!
-        </p>
-
-        <ul class="flex flex-col space-y-2 font-medium">
-          <div class="space-y-2">
-            <li class="flex items-center gap-1.5 text-left">
-              <Check className="size-5" /> עזרה בלימוד תאוריה
-            </li>
-            <li class="flex items-center gap-1.5">
-              <Check className="size-5" /> רענון ולימוד נהיגה
-            </li>
-            <li class="flex items-center gap-1.5">
-              <Check className="size-5" /> המרת רישיון זר לישראלי ואוטומטי לידני
-            </li>
-          </div>
-        </ul>
-      </div>
-      <div
-        class="m-2 rounded-xl bg-neutral-900/5 p-2 ring-1 ring-inset ring-neutral-900/10 dark:bg-neutral-100/10 lg:-m-4 lg:rounded-2xl lg:p-4"
-      >
-        <Image src="/logo.png" alt="logo" width="500" height="300" />
-      </div>
-    </section>
+    <HeroSection />
   </div>
 
-  <section id="reviews" class="grainy-light pb-24 pt-10">
-    <div class="mb-20">
-      <h2
-        class="text-center text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]"
-      >
-        חוות דעת
-      </h2>
-    </div>
-
-    <div
-      class="container space-y-8 sm:grid sm:space-y-0 lg:grid-cols-3 lg:gap-x-8 lg:px-8"
-    >
-      <Card className="flex h-[200px] flex-col justify-between">
-        <CardHeader>
-          <CardDescription
-            >ניר מורה מדהים. כל שיעור הוא חוויה בפני עצמה, הוא תומך, מצחיק ונותן
-            תחושת ביטחון בכל שיעור. נהנתי מכל רגע איתו והוא בהחלט הבחירה הנכונה.
-          </CardDescription>
-        </CardHeader>
-        <CardFooter
-          className="flex flex-col items-center justify-between gap-2 sm:flex-row"
-        >
-          <div class="flex gap-2">
-            <Image
-              alt="profile"
-              src="https://lh3.googleusercontent.com/a/ACg8ocLFhCgTZXN29gbTR9omCYCrfN3VVC8BSp2EvUnpuczIN2a2fQ=s96-c"
-              width="25"
-              height="25"
-              class="rounded-full"
-            />
-            <span class="text-muted-foreground">Itay Yosha</span>
-          </div>
-          <div class="flex gap-0.5">
-            <Star className="fill-black" />
-            <Star className="fill-black" />
-            <Star className="fill-black" />
-            <Star className="fill-black" />
-            <Star className="fill-black" />
-          </div>
-        </CardFooter>
-      </Card>
-      <Card className="flex h-[200px] flex-col justify-between">
-        <CardHeader>
-          <CardDescription
-            >ניר מורה מצויין, השקיע ועזר למרות שלקח לי הרבה זמן, ואפילו עברתי
-            טסט ראשון
-          </CardDescription>
-        </CardHeader>
-        <CardFooter
-          className="flex flex-col items-center justify-between gap-2 sm:flex-row"
-        >
-          <div class="flex gap-2">
-            <Image
-              alt="profile"
-              src="https://lh3.googleusercontent.com/a/ACg8ocKH4aBbvD57jexJyEIPCasu1KAy7L5j8KOVVBdsDUpYORDnx_Z9=s96-c"
-              width="25"
-              height="25"
-              class="rounded-full"
-            />
-            <span class="text-muted-foreground">Yuval Damti</span>
-          </div>
-          <div class="flex gap-0.5">
-            <Star className="fill-black" />
-            <Star className="fill-black" />
-            <Star className="fill-black" />
-            <Star className="fill-black" />
-            <Star className="fill-black" />
-          </div>
-        </CardFooter>
-      </Card>
-    </div>
-  </section>
+  <FeaturesSection />
 </MainLayout>
