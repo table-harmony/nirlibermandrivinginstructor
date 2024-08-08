@@ -1,9 +1,34 @@
-<footer class="bg-blue-50">
+---
+import { BoldIcon, MessageCircleIcon } from 'lucide-react'
+import { Button } from './ui/button'
+---
+
+<footer>
   <div
-    class="relative z-10 mx-auto overflow-hidden border border-b-0 border-gray-200 bg-white p-6"
+    class="relative z-10 mx-auto overflow-hidden border border-b-0 border-muted p-6"
   >
     <div class="flex flex-col items-center gap-4 text-center">
-      <p class="text-sm leading-5 text-gray-400">
+      <div class="flex gap-2">
+        <Button size="icon" variant="ghost" className="rounded-full">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://web.whatsapp.com/send?phone=+972502039192"
+          >
+            <MessageCircleIcon className="size-4" />
+          </a>
+        </Button>
+        <Button size="icon" variant="ghost" className="rounded-full">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.b144.co.il/b144_sip/4A1404134470655D4C140613477964544B"
+          >
+            <BoldIcon className="size-4" />
+          </a>
+        </Button>
+      </div>
+      <p class="text-sm leading-5 text-muted-foreground">
         © ניר ליברמן {new Date().getFullYear()}
       </p>
     </div>
