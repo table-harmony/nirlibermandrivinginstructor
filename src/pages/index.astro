@@ -1,7 +1,11 @@
 ---
-import Base from '@/layouts/Base.astro'
+import MainLayout from '@/layouts/main-layout.astro'
+
+import HeroSection from '@/components/sections/hero.astro'
+import PreviewSection from '@/components/sections/preview.astro'
 ---
 
-<Base>
-  <a href="/page">Page</a>
-</Base>
+<MainLayout>
+  <HeroSection />
+  <PreviewSection />
+</MainLayout>

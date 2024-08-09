@@ -1,28 +1,35 @@
-import type { Config } from 'tailwindcss'
+import { fontFamily } from 'tailwindcss/defaultTheme'
 
 const config = {
   darkMode: ['class'],
-  content: [
-    './pages/**/*.{ts,tsx,astro}',
-    './components/**/*.{ts,tsx,astro}',
-    './app/**/*.{ts,tsx,astro}',
-    './src/**/*.{ts,tsx,astro}',
-  ],
-  prefix: '',
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     container: {
       center: true,
-      padding: '2rem',
+      padding: '1rem',
       screens: {
         '2xl': '1400px',
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Inter', ...fontFamily.sans],
+        heading: ['CalSans Semibold', ...fontFamily.sans],
+      },
+      height: {
+        18: '4.5rem',
+      },
+      spacing: {
+        18: '4.5rem',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
+        background: {
+          DEFAULT: 'hsl(var(--background))',
+          200: 'hsl(var(--background-200))',
+        },
         foreground: 'hsl(var(--foreground))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
@@ -41,7 +48,7 @@ const config = {
           foreground: 'hsl(var(--muted-foreground))',
         },
         accent: {
-          DEFAULT: 'hsl(var(--accent))',
+          DEFAULT: 'hsla(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
         },
         popover: {
@@ -60,12 +67,12 @@ const config = {
       },
       keyframes: {
         'accordion-down': {
-          from: { height: '0' },
+          from: { height: 0 },
           to: { height: 'var(--radix-accordion-content-height)' },
         },
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' },
+          to: { height: 0 },
         },
       },
       animation: {
@@ -74,7 +81,7 @@ const config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
-} satisfies Config
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
+}
 
 export default config
