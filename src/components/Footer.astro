@@ -1,0 +1,42 @@
+---
+import { siteConfig } from '@/config/site'
+
+import { Button } from '@/components/ui/button'
+import { ModeToggle } from '@/components/ModeToggle'
+import Logo from '@/components/Logo.astro'
+
+import { BoldIcon, MessageCircleIcon } from 'lucide-react'
+---
+
+<footer class="relative z-10 mt-8 flex flex-col border-t border-border py-8">
+  <div class="container space-y-10 px-4 pt-6 lg:px-20">
+    <section class="xl:grid xl:grid-cols-5 xl:gap-8">
+      <div class="space-y-4 xl:col-span-2">
+        <Logo />
+        <p class="max-w-xs text-sm text-muted-foreground">
+          {siteConfig.description}
+        </p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" rel="noreferrer">
+            <Button size="icon" variant="outline">
+              <span class="sr-only">whatsapp</span>
+              <MessageCircleIcon className="h-4 w-4" />
+            </Button>
+          </a>
+          <a href="#" target="_blank" rel="noreferrer">
+            <Button size="icon" variant="outline">
+              <span class="sr-only">bazak</span>
+              <BoldIcon className="h-4 w-4" />
+            </Button>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section
+      class="flex items-center justify-between gap-4 border-t border-border pt-8"
+    >
+      <p>© Nir Liberman 2024</p>
+      <ModeToggle client:load />
+    </section>
+  </div>
+</footer>
