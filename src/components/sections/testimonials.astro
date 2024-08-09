@@ -1,0 +1,100 @@
+---
+import { Image } from 'astro:assets'
+
+import HeaderSection from './header-section.astro'
+
+const testimonials = [
+  {
+    name: 'Itay Yosha',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocLFhCgTZXN29gbTR9omCYCrfN3VVC8BSp2EvUnpuczIN2a2fQ=s96-c',
+    review:
+      'ניר מורה מדהים. כל שיעור הוא חוויה בפני עצמה, הוא תומך, מצחיק ונותן תחושת ביטחון בכל שיעור. נהנתי מכל רגע איתו והוא בהחלט הבחירה הנכונה.',
+  },
+  {
+    name: 'Yuval Damti',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocKH4aBbvD57jexJyEIPCasu1KAy7L5j8KOVVBdsDUpYORDnx_Z9=s96-c',
+    review:
+      'ניר מורה מצויין, השקיע ועזר למרות שלקח לי הרבה זמן, ואפילו עברתי טסט ראשון',
+  },
+  {
+    name: 'taltal',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocIDsk4uv-HHisx6UqPa3ODVZQr00VkjNbX0yX2H-Noxyro=s96-c',
+    review:
+      'הגעתי לניר ממש במקרה ובמזל ניר המורה הכי סבלני שפגשתי מכל טעות הוא לימד אותי לצמוח וללמוד מהטעות. בן אדם מקסים ומורה נפלא אני יחסית חסרת ביטחון וניר תמיד העלה לי את המורל ונתן לי כוח להמשיך למרות שרציתי לוותר הרבה. ובזכותו היום עברתי טסט ראשון:',
+  },
+  {
+    name: 'עדי לניאדו',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocImg7WT2lxsFRw4rTQztCtWQRE_I2i3lqA-ny7YqMkg=s96-c',
+    review:
+      'קיבלתי עליו המון המלצות מחברות ובצדק משקיע, אפכתי, סבלני, לא מוותר גם אחרי כמה כשלונות בטסטים מסביר בצורה רגועה וברורה והשיעורים עוברים בדרך כיפית. ממליצה בחום',
+  },
+  {
+    name: 'Emily Zalevsky',
+    image:
+      'https://lh3.googleusercontent.com/a/AAcHTtcVQKeJfOEi2qxVOK5xGVQqBlg1ZLg2fnXLp3VQd594=s96-c',
+    review:
+      'ניר הוא המורה הכי טוב שתוכלו לבקש. אין מורה סבלן כמוהו שיסביר גם עוד מאה פעם אם צריך בצורה הכי טובה ונעימה שיש. מורה אלוף, רק בזכותו עברתי טסט ראשון.',
+  },
+  {
+    name: 'Ira',
+    image:
+      'https://lh3.googleusercontent.com/a/AAcHTtdDnNN4-kPgSWPYbJ4VXxV3avlUlUYCUnr2yXtLmLy3WG4=s96-c',
+    review:
+      'ניר הוא המורה הכי טוב שאתם יכולים לבקש ובן אדם מדהים, הוא סבלן הכי נחמד שיש רגוע וגורם להרגשת ביטחון ורוגע, נהנתי מאוד בשיעורים איתו פשוט היה לי כיף. אין מורה יותר טוב ממנו',
+  },
+  {
+    name: 'יסמין רוגל',
+    image:
+      'https://lh3.googleusercontent.com/a/AGNmyxbWThLGMCpkxi8RLYIQGq17a1HB8X4Hm-Vrk8-0=s96-c',
+    review:
+      'ניר מורה מעולה, מקצועי, קשוב וסבלני. ניר תמך בי לאורך כל הדרך וגרם לי להרגיש בנוח על הכביש. בשיעורים תמיד הייתה אווירה טובה ובטוחה, מההתחלה הרגשתי שאני בידיים טובות. ממליצה עליו מאוד, תודה רבה ניר',
+  },
+]
+---
+
+<section id="testimonials">
+  <div class="container flex max-w-7xl flex-col gap-10 py-32 sm:gap-y-16">
+    <HeaderSection
+      label="ביקורות"
+      title="מה הלקוחות שלנו משתפים."
+      subtitle="גלה את המשוב הזוהר מהלקוחות המרוצים שלנו "
+    />
+    <div
+      class="column-1 gap-5 space-y-5 md:columns-2 lg:columns-3 xl:columns-4"
+    >
+      {
+        testimonials.map((item) => (
+          <div class="break-inside-avoid">
+            <div class="relative rounded-xl border bg-muted/25">
+              <div class="flex flex-col px-4 py-5 sm:p-6">
+                <div>
+                  <div class="relative mb-4 flex items-center gap-3">
+                    <span class="relative inline-flex size-10 shrink-0 items-center justify-center rounded-full text-base">
+                      <Image
+                        width={100}
+                        height={100}
+                        class="size-full rounded-full border"
+                        src={item.image}
+                        alt={item.name}
+                      />
+                    </span>
+                    <div>
+                      <p class="text-sm font-semibold text-foreground">
+                        {item.name}
+                      </p>
+                    </div>
+                  </div>
+                  <q class="text-muted-foreground">{item.review}</q>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
