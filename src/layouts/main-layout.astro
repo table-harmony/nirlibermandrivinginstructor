@@ -16,14 +16,12 @@ const { title, description } = Astro.props
 
 <BaseLayout title={title} description={description}>
   <header
-    class="sticky top-0 z-50 w-full border-b border-border/40 py-4 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+    class="sticky top-0 z-50 w-full border-b border-border/40 backdrop-blur supports-[backdrop-filter]:bg-background/60"
   >
     <nav class="container flex h-14 items-center justify-between">
       <a href="#hero" class="flex items-center gap-2">
         <CarIcon className="size-6" />
-        <span class="hidden font-bold sm:inline-block lg:text-xl">
-          ניר ליברמן
-        </span>
+        <span class="font-bold"> ניר ליברמן </span>
       </a>
     </nav>
   </header>

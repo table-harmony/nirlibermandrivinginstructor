@@ -1,6 +1,6 @@
 export const siteConfig = {
-  title: 'NirLibermanDrivingInstructor',
-  description: 'Nir Liberman driving instructor',
+  title: 'ניר ליברמן - מורה נהיגה',
+  description: 'ניר ליברמן - מורה נהיגה',
   url: 'https://nirlibermandrivinginstructor.vercel.app',
   author: 'table-harmony',
   links: {
