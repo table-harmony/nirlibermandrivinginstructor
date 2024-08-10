@@ -19,7 +19,7 @@ const { title, description } = Astro.props
     class="sticky top-0 z-50 w-full border-b border-border/40 py-4 backdrop-blur supports-[backdrop-filter]:bg-background/60"
   >
     <nav class="container flex h-14 items-center justify-between">
-      <a href="#hero" class="hidden items-center gap-2 md:flex">
+      <a href="#hero" class="flex items-center gap-2">
         <CarIcon className="size-6" />
         <span class="hidden font-bold sm:inline-block lg:text-xl">
           ניר ליברמן
@@ -36,24 +36,22 @@ const { title, description } = Astro.props
     >
       <div class="flex flex-col items-center gap-4 text-center">
         <div class="flex gap-2">
-          <Button size="icon" variant="ghost" className="rounded-full">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href={siteConfig.links.whatsapp}
-            >
+          <a target="_blank" rel="noreferrer" href={siteConfig.links.whatsapp}>
+            <Button size="icon" variant="ghost">
+              <span class="sr-only">whatsapp</span>
               <MessageCircleIcon className="size-4" />
-            </a>
-          </Button>
-          <Button size="icon" variant="ghost" className="rounded-full">
-            <a target="_blank" rel="noreferrer" href={siteConfig.links.bezeq}>
+            </Button>
+          </a>
+          <a target="_blank" rel="noreferrer" href={siteConfig.links.bezeq}>
+            <Button size="icon" variant="ghost">
+              <span class="sr-only">bezeq</span>
               <BoldIcon className="size-4" />
-            </a>
-          </Button>
+            </Button>
+          </a>
         </div>
-        <p>
+        <q>
           לימוד נהיגה ברמה אחרת, באופן מקצועי ללא פשרות ובשיטת לימוד ייחודית.
-        </p>
+        </q>
         <p class="text-sm leading-5 text-muted-foreground">
           © ניר ליברמן {new Date().getFullYear()}
         </p>
