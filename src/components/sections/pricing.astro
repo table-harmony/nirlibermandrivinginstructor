@@ -1,0 +1,55 @@
+---
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardFooter,
+  CardContent,
+} from '../ui/card'
+
+import HeaderSection from './header-section.astro'
+
+import { Button } from '../ui/button'
+
+import { CheckCircle2Icon } from 'lucide-react'
+---
+
+<section id="pricing" class="container flex max-w-7xl flex-col gap-10 pb-32">
+  <HeaderSection label="מחירים" title="תבחר את התוכנית המתאימה לך" />
+
+  <div class="flex flex-col items-center justify-center gap-10 sm:flex-row">
+    <Card
+      className="animate-background-shine w-72 justify-between border-zinc-700 bg-[length:200%_100%] transition-colors dark:bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)]"
+    >
+      <CardHeader>
+        <CardTitle>שיעורים כפולים</CardTitle>
+        <CardDescription>300₪</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div class="flex items-center gap-2">
+          <CheckCircle2Icon className="size-4 text-green-400" />
+          <p class="text-sm text-muted-foreground">80 דקות</p>
+        </div>
+      </CardContent>
+      <CardFooter>
+        <Button className="w-full">תתחילו עכשיו</Button>
+      </CardFooter>
+    </Card>
+    <Card className="w-72 justify-between border-zinc-700">
+      <CardHeader>
+        <CardTitle>שיעורים יחידים</CardTitle>
+        <CardDescription>150₪</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div class="flex items-center gap-2">
+          <CheckCircle2Icon className="size-4 text-green-400" />
+          <p class="text-sm text-muted-foreground">40 דקות</p>
+        </div>
+      </CardContent>
+      <CardFooter>
+        <Button className="w-full">תתחילו עכשיו</Button>
+      </CardFooter>
+    </Card>
+  </div>
+</section>
