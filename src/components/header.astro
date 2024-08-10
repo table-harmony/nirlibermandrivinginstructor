@@ -1,0 +1,35 @@
+---
+import { Button } from '@/components/ui/button'
+import { Image } from 'astro:assets'
+
+const path = Astro.url.pathname
+---
+
+<header
+  class="sticky top-0 z-50 w-full border-b border-border/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:py-4"
+>
+  <nav class="container flex h-14 items-center justify-between">
+    <div class="flex items-center gap-4">
+      <a href="/" class="flex items-center gap-2">
+        <Image src="/favicon.ico" alt="logo" width="36" height="36" />
+        <span class="sr-only">ניר ליברמן</span>
+      </a>
+      <a href="/about">
+        <Button
+          variant="ghost"
+          className={path.includes('about') ? 'bg-muted' : ''}
+        >
+          הודות
+        </Button>
+      </a>
+      <a href="/get-started">
+        <Button
+          variant="ghost"
+          className={path.includes('get-started') ? 'bg-muted' : ''}
+        >
+          התחילו
+        </Button>
+      </a>
+    </div>
+  </nav>
+</header>

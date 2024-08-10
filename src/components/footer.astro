@@ -1,0 +1,37 @@
+---
+import { siteConfig } from '@/config/site'
+
+import { ModeToggle } from '@/components/mode-toggle'
+import { Button } from '@/components/ui/button'
+import { BoldIcon, MessageCircleIcon } from 'lucide-react'
+---
+
+<footer>
+  <div
+    class="relative z-10 mx-auto overflow-hidden border border-b-0 border-border p-6"
+  >
+    <div class="flex flex-col gap-4 text-center">
+      <div class="flex gap-2">
+        <a target="_blank" rel="noreferrer" href={siteConfig.links.whatsapp}>
+          <Button size="icon" variant="ghost">
+            <span class="sr-only">whatsapp</span>
+            <MessageCircleIcon className="size-4" />
+          </Button>
+        </a>
+        <a target="_blank" rel="noreferrer" href={siteConfig.links.bezeq}>
+          <Button size="icon" variant="ghost">
+            <span class="sr-only">bezeq</span>
+            <BoldIcon className="size-4" />
+          </Button>
+        </a>
+      </div>
+      <q class="text-right"> לימוד נהיגה ברמה אחרת. </q>
+      <div class="flex w-full items-center justify-between">
+        <p class="text-sm leading-5 text-muted-foreground">
+          © ניר ליברמן {new Date().getFullYear()}
+        </p>
+        <ModeToggle client:visible />
+      </div>
+    </div>
+  </div>
+</footer>
