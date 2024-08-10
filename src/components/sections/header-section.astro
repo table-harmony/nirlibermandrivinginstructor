@@ -9,12 +9,8 @@ const { label, title, subtitle } = Astro.props
 ---
 
 <div class="flex flex-col items-center text-center">
-  {
-    label ? (
-      <div class="text-gradient_indigo-purple mb-4 font-semibold">{label}</div>
-    ) : null
-  }
-  <h2 class="font-heading text-3xl md:text-4xl lg:text-[40px]">
+  {label ? <div class="text-gradient mb-4 font-semibold">{label}</div> : null}
+  <h2 class="font-heading text-3xl font-semibold md:text-4xl lg:text-[40px]">
     {title}
   </h2>
   {
