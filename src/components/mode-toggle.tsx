@@ -2,30 +2,37 @@ import * as React from 'react'
 import { Switch } from './ui/switch'
 
 export function ModeToggle() {
-  const [theme, setThemeState] = React.useState<
-    'theme-light' | 'dark' | 'system'
-  >('theme-light')
-
-  React.useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains('dark')
-    setThemeState(isDarkMode ? 'dark' : 'theme-light')
-  }, [])
-
-  React.useEffect(() => {
-    const isDark =
-      theme === 'dark' ||
-      (theme === 'system' &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
-  }, [theme])
+  const [theme, setTheme] = React.useState(() => {
+    if (import.meta.env.SSR) {
+      return undefined
+    }
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme')
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark'
+    }
+    return 'light'
+  })
 
   const toggleTheme = () => {
-    const newTheme = theme === 'theme-light' ? 'dark' : 'theme-light'
-    setThemeState(newTheme)
+    const t = theme === 'light' ? 'dark' : 'light'
+    localStorage.setItem('theme', t)
+    setTheme(t)
   }
+
+  React.useEffect(() => {
+    const root = document.documentElement
+    if (theme === 'light') {
+      root.classList.remove('dark')
+    } else {
+      root.classList.add('dark')
+    }
+  }, [theme])
 
   return (
     <div dir="ltr">
+      <span className="sr-only">{theme === 'dark' ? 'dark' : 'light'}</span>
       <Switch
         aria-label="theme switcher"
         checked={theme === 'dark'}
