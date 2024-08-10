@@ -21,10 +21,15 @@ const { title, description } = Astro.props
     class="sticky top-0 z-50 w-full border-b border-border/40 backdrop-blur supports-[backdrop-filter]:bg-background/60"
   >
     <nav class="container flex h-14 items-center justify-between">
-      <a href="#hero" class="flex items-center gap-2">
-        <CarIcon className="size-6" />
-        <span class="font-bold"> ניר ליברמן </span>
-      </a>
+      <div class="flex items-center gap-4">
+        <a href="/" class="ml-4 flex items-center gap-2">
+          <CarIcon className="size-6" />
+          <span class="font-bold"> ניר ליברמן </span>
+        </a>
+        <a href="/about">
+          <Button variant="ghost"> הודות </Button>
+        </a>
+      </div>
       <ModeToggle client:load />
     </nav>
   </header>

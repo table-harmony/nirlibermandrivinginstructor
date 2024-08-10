@@ -1,0 +1,110 @@
+---
+import { Image } from 'astro:assets'
+---
+
+<div
+  class="relative z-10 flex flex-col justify-center overflow-hidden pb-16 lg:overflow-visible"
+>
+  <div
+    class="mx-auto flex w-max -translate-x-[15%] justify-center lg:w-full lg:translate-x-0"
+  >
+    <div
+      class="relative z-10 mx-auto max-w-4xl px-4 md:max-w-6xl md:px-12 lg:max-w-5xl lg:px-6 xl:max-w-[80rem] xl:px-6 2xl:px-0"
+    >
+      <div class="grid grid-cols-4 items-center gap-4 md:gap-6">
+        {/* First Column */}
+        <div class="space-y-4 md:space-y-6">
+          <Image
+            class="h-full w-auto overflow-hidden rounded-xl object-cover"
+            src="/images/gallery/image.png"
+            alt="logo"
+            width={800}
+            height={1226}
+            loading="eager"
+          />
+          <div class="h-52 overflow-hidden rounded-xl">
+            <Image
+              class="h-full w-full object-cover"
+              src="/images/gallery/image1.png"
+              alt="logo"
+              width={800}
+              height={1334}
+            />
+          </div>
+        </div>
+
+        {/* Second Column */}
+        <div class="space-y-4 md:space-y-6">
+          <div class="h-48 overflow-hidden rounded-xl">
+            <Image
+              class="h-full w-full object-cover"
+              src="/images/gallery/image2.png"
+              alt="logo"
+              width={800}
+              height={983}
+              loading="eager"
+            />
+          </div>
+          <Image
+            class="rounded-xl"
+            src="/images/gallery/image3.png"
+            alt="logo"
+            width={800}
+            height={1108}
+            loading="eager"
+          />
+          <div class="relative h-48 overflow-hidden rounded-xl">
+            <Image
+              class="h-full w-full object-cover"
+              src="/images/gallery/image9.png"
+              alt="logo"
+              width={1260}
+              height={750}
+            />
+          </div>
+        </div>
+
+        {/* Third Column */}
+        <div class="space-y-4 md:space-y-6">
+          <div class="h-56 overflow-hidden rounded-xl">
+            <Image
+              class="h-full w-full object-cover"
+              src="/images/gallery/image5.png"
+              alt="logo"
+              width={800}
+              height={1334}
+              loading="eager"
+            />
+          </div>
+          <div class="h-80 w-full overflow-hidden rounded-xl xl:h-[28rem]">
+            <Image
+              class="h-full w-full object-cover"
+              src="/images/gallery/image6.png"
+              alt="logo"
+              width={801}
+              height={2477}
+            />
+          </div>
+        </div>
+
+        {/* Fourth Column */}
+        <div class="space-y-4 md:space-y-6">
+          <Image
+            src="/images/gallery/image7.png"
+            alt="logo"
+            width={800}
+            height={900}
+            class="rounded-xl"
+          />
+          <Image
+            src="/images/gallery/image8.png"
+            alt="logo"
+            width={800}
+            height={900}
+            class="rounded-xl"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
