@@ -1,5 +1,3 @@
-import { fontFamily } from 'tailwindcss/defaultTheme'
-
 const config = {
   darkMode: ['class'],
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -13,8 +11,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', ...fontFamily.sans],
-        heading: ['CalSans Semibold', ...fontFamily.sans],
+        sans: ['Rubik'],
       },
       height: {
         18: '4.5rem',

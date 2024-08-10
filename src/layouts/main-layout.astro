@@ -29,12 +29,17 @@ const { title, description } = Astro.props
         <a href="/about">
           <Button variant="ghost"> הודות </Button>
         </a>
+        <a href="/get-started">
+          <Button variant="ghost"> התחילו </Button>
+        </a>
       </div>
       <ModeToggle client:load />
     </nav>
   </header>
 
-  <slot />
+  <main class="flex-1">
+    <slot />
+  </main>
 
   <footer>
     <div

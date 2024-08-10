@@ -13,8 +13,6 @@ import HeaderSection from './header-section.astro'
 import { Button } from '../ui/button'
 
 import { CheckCircle2Icon } from 'lucide-react'
-
-import { siteConfig } from '@/config/site'
 ---
 
 <section id="pricing">
@@ -36,12 +34,7 @@ import { siteConfig } from '@/config/site'
           </div>
         </CardContent>
         <CardFooter>
-          <a
-            target="_blank"
-            class="w-full"
-            rel="noreferrer"
-            href={siteConfig.links.whatsapp}
-          >
+          <a class="w-full" href="/get-started">
             <Button className="w-full">תתחילו עכשיו</Button>
           </a>
         </CardFooter>
@@ -58,12 +51,7 @@ import { siteConfig } from '@/config/site'
           </div>
         </CardContent>
         <CardFooter>
-          <a
-            target="_blank"
-            class="w-full"
-            rel="noreferrer"
-            href={siteConfig.links.whatsapp}
-          >
+          <a class="w-full" href="/get-started">
             <Button className="w-full">תתחילו עכשיו</Button>
           </a>
         </CardFooter>
