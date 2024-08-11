@@ -7,6 +7,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { EyeIcon, FormInputIcon, PhoneCallIcon } from 'lucide-react'
 import { siteConfig } from '@/config/site'
+import Confetti from '@/components/ui/confetti'
 
 const steps = [
   {
@@ -75,9 +76,12 @@ const Footer = () => {
   return (
     <>
       {hasCompletedAllSteps && (
-        <div className="flex h-40 items-center justify-center rounded-md border border-border bg-secondary">
-          <h1 className="text-xl"> סיימת את כל הצעדים! 🎉</h1>
-        </div>
+        <>
+          <Confetti />
+          <div className="flex h-40 animate-background-shine items-center justify-center rounded-lg border border-zinc-700 bg-card bg-[length:200%_100%] text-card-foreground shadow-sm transition-colors dark:bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)]">
+            <h1 className="text-xl"> סיימת את כל הצעדים! 🎉</h1>
+          </div>
+        </>
       )}
       <div className="flex w-full justify-end gap-2">
         {hasCompletedAllSteps ? (
