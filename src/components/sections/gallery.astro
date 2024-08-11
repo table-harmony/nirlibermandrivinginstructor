@@ -14,17 +14,16 @@ import { Image } from 'astro:assets'
             alt="gallery"
             width={800}
             height={1226}
-            loading="eager"
+            loading="lazy"
           />
-          <div class="h-52 overflow-hidden rounded-xl">
-            <Image
-              class="h-full w-full object-cover"
-              src="/images/gallery/image1.png"
-              alt="gallery"
-              width={800}
-              height={1334}
-            />
-          </div>
+          <Image
+            class="h-52 rounded-xl object-cover"
+            src="/images/gallery/image1.png"
+            alt="gallery"
+            width={800}
+            height={1334}
+            loading="lazy"
+          />
         </div>
 
         {/* Second Column */}
@@ -36,7 +35,7 @@ import { Image } from 'astro:assets'
               alt="gallery"
               width={800}
               height={983}
-              loading="eager"
+              loading="lazy"
             />
           </div>
           <Image
@@ -45,7 +44,7 @@ import { Image } from 'astro:assets'
             alt="gallery"
             width={800}
             height={1108}
-            loading="eager"
+            loading="lazy"
           />
           <div class="relative h-48 overflow-hidden rounded-xl">
             <Image
@@ -67,7 +66,7 @@ import { Image } from 'astro:assets'
               alt="gallery"
               width={800}
               height={1334}
-              loading="eager"
+              loading="lazy"
             />
           </div>
           <div class="h-80 w-full overflow-hidden rounded-xl xl:h-[28rem]">
@@ -108,7 +107,7 @@ import { Image } from 'astro:assets'
       alt="logo"
       width={800}
       height={1226}
-      loading="eager"
+      loading="lazy"
     />
     <Image
       class="h-52 rounded-xl object-cover"
@@ -123,7 +122,7 @@ import { Image } from 'astro:assets'
       alt="gallery"
       width={800}
       height={983}
-      loading="eager"
+      loading="lazy"
     />
     <Image
       class="rounded-xl"
@@ -131,7 +130,7 @@ import { Image } from 'astro:assets'
       alt="gallery"
       width={800}
       height={1108}
-      loading="eager"
+      loading="lazy"
     />
     <Image
       class="h-56 rounded-xl object-cover"
@@ -146,7 +145,7 @@ import { Image } from 'astro:assets'
       alt="gallery"
       width={800}
       height={1334}
-      loading="eager"
+      loading="lazy"
     />
     <Image
       src="/images/gallery/image7.png"

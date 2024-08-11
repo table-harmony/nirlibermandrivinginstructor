@@ -2,26 +2,26 @@
 import { Image } from 'astro:assets'
 
 const data = {
-  title: 'החלטת להוציא רישיון נהיגה ?',
-  description: 'קדימה בוא נצא לדרך...',
+  title: 'כמה מילים על העסק',
   list: [
     {
       title: 'עזרה בלימוד תאוריה',
-      description: 'הסבר',
+      description: 'יחס אישי, סבלנות, מקצועיות ואמינות לאורך כל הדרך.',
     },
     {
       title: 'לימוד נהיגה',
-      description: 'הסבר',
+      description: 'שיעורים באוירה נינוחה וצעירה שמותאמת לכל אחד ואחת.',
     },
     {
       title: 'המרת רישיון',
-      description: 'הסבר',
+      description:
+        'המרת רישיון זר לישראלי, ריענון נהיגה, המרת רישיון אוטומטי לגיר ידני.',
     },
   ],
 }
 ---
 
-<div class="py-16 sm:py-20">
+<div class="pt-16">
   <div
     class="mx-auto grid max-w-7xl gap-10 px-4 sm:gap-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8"
   >
@@ -31,10 +31,7 @@ const data = {
       >
         {data.title}
       </h2>
-      <p class="mt-6 text-lg text-muted-foreground">
-        {data.description}
-      </p>
-      <dl class="mt-6 space-y-4 leading-7">
+      <dl class="mt-10 space-y-4 leading-7">
         {
           data.list.map((item) => {
             return (
@@ -51,15 +48,19 @@ const data = {
         }
       </dl>
     </div>
-    <div class="order-2 overflow-hidden rounded-xl border lg:-m-4">
-      <div class="relative aspect-video">
+    <div
+      class="order-2 rounded-xl md:bg-muted/30 md:p-3 md:ring-1 md:ring-inset md:ring-border"
+    >
+      <div
+        class="relative aspect-video overflow-hidden rounded-xl border md:rounded-lg"
+      >
         <Image
           class="size-full object-cover object-center"
           src="/images/logo.png"
           alt="logo"
           width={1000}
           height={500}
-          loading="eager"
+          loading="lazy"
         />
       </div>
     </div>
