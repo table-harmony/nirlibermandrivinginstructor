@@ -47,7 +47,7 @@ const steps = [
 
 export function DrivingStepper() {
   return (
-    <div className="flex w-full flex-col gap-4">
+    <div className="flex flex-col gap-4">
       <Stepper orientation="vertical" initialStep={0} steps={steps}>
         {steps.map((stepProps, index) => {
           return (
@@ -78,14 +78,14 @@ const Footer = () => {
       {hasCompletedAllSteps && (
         <>
           <Confetti />
-          <div className="flex h-40 animate-background-shine items-center justify-center rounded-lg border border-zinc-700 bg-card bg-[length:200%_100%] text-card-foreground shadow-sm transition-colors dark:bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)]">
+          <div className="flex h-40 animate-background-shine items-center justify-center rounded-md border border-border bg-[linear-gradient(110deg,#FFFFFF,45%,#f5f5f5,55%,#FFFFFF)] bg-[length:200%_100%] transition-colors dark:bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)]">
             <h1 className="text-xl"> סיימת את כל הצעדים! 🎉</h1>
           </div>
         </>
       )}
       <div className="flex w-full justify-end gap-2">
         {hasCompletedAllSteps ? (
-          <Button size="sm" onClick={resetSteps}>
+          <Button size="lg" onClick={resetSteps}>
             לאתחל
           </Button>
         ) : (
@@ -93,12 +93,12 @@ const Footer = () => {
             <Button
               disabled={isDisabledStep}
               onClick={prevStep}
-              size="sm"
               variant="secondary"
+              size="lg"
             >
               קודם
             </Button>
-            <Button size="sm" onClick={nextStep}>
+            <Button size="lg" onClick={nextStep}>
               {isLastStep ? 'סיום' : 'הבא'}
             </Button>
           </>
