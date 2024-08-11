@@ -5,12 +5,43 @@ import {
   useStepper,
 } from '@/components/ui/stepper'
 import { Button } from '@/components/ui/button'
-import { CarIcon, FormInputIcon, PhoneCallIcon } from 'lucide-react'
+import { EyeIcon, FormInputIcon, PhoneCallIcon } from 'lucide-react'
+import { siteConfig } from '@/config/site'
 
 const steps = [
-  { label: 'צעד ראשון', body: 'הסבר', icon: PhoneCallIcon },
-  { label: 'צעד שני', body: 'הסבר', icon: FormInputIcon },
-  { label: 'צעד שלישי', body: 'הסבר', icon: CarIcon },
+  {
+    label: 'צעד ראשון',
+    body: (
+      <p>
+        תחילה, יש להוציא בקשה לרישיון נהיגה, אנא תמלאו את הטופס הבא:
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://govforms.gov.il/mw/forms/RishumTheory@mot.gov.il#!requestDetails"
+        >
+          <Button variant="link">קישור לטופס.</Button>
+        </a>
+      </p>
+    ),
+    icon: FormInputIcon,
+  },
+  {
+    label: 'צעד שני',
+    body: <p>לאחר מכן יש לבצע בדיקת ראייה על ידי אופטומטריסט.</p>,
+    icon: EyeIcon,
+  },
+  {
+    label: 'צעד שלישי',
+    body: (
+      <p>
+        לבסוף, תכתבו לנו
+        <a target="_blank" rel="noreferrer" href={siteConfig.links.whatsapp}>
+          <Button variant="link">בווטסאפ.</Button>
+        </a>
+      </p>
+    ),
+    icon: PhoneCallIcon,
+  },
 ] satisfies StepItem[]
 
 export function DrivingStepper() {

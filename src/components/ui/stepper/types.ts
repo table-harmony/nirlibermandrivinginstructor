@@ -8,7 +8,7 @@ type StepItem = {
   description?: string
   icon?: IconType
   optional?: boolean
-  body?: string
+  body?: React.ReactNode
 }
 
 interface StepOptions {
