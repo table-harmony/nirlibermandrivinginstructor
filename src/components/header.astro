@@ -3,6 +3,9 @@ import { Button } from '@/components/ui/button'
 import { Image } from 'astro:assets'
 
 const path = Astro.url.pathname
+
+import { ModeToggle } from './mode-toggle'
+import { MobileNav } from './mobile-nav'
 ---
 
 <header
@@ -14,22 +17,28 @@ const path = Astro.url.pathname
         <Image src="/favicon.ico" alt="logo" width="36" height="36" />
         <span class="sr-only">ניר ליברמן</span>
       </a>
-      <a href="/about">
-        <Button
-          variant="ghost"
-          className={path.includes('about') ? 'bg-muted' : ''}
-        >
-          הודות
-        </Button>
-      </a>
-      <a href="/get-started">
-        <Button
-          variant="ghost"
-          className={path.includes('get-started') ? 'bg-muted' : ''}
-        >
-          צעדים
-        </Button>
-      </a>
+      <div class="hidden items-center gap-2 sm:flex">
+        <a href="/about">
+          <Button
+            variant="ghost"
+            className={path.includes('about') ? 'bg-muted' : ''}
+          >
+            הודות
+          </Button>
+        </a>
+        <a href="/get-started">
+          <Button
+            variant="ghost"
+            className={path.includes('get-started') ? 'bg-muted' : ''}
+          >
+            צעדים
+          </Button>
+        </a>
+      </div>
     </div>
+    <div class="hidden sm:block">
+      <ModeToggle client:load />
+    </div>
+    <MobileNav client:idle />
   </nav>
 </header>
