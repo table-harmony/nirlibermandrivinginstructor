@@ -5,8 +5,7 @@ import {
   useStepper,
 } from '@/components/ui/stepper'
 import { Button } from '@/components/ui/button'
-import { EyeIcon, FormInputIcon, PhoneCallIcon } from 'lucide-react'
-import { siteConfig } from '@/config/site'
+import { CarIcon, EyeIcon, FormInputIcon } from 'lucide-react'
 import Confetti from '@/components/ui/confetti'
 
 const steps = [
@@ -14,7 +13,23 @@ const steps = [
     label: 'צעד ראשון',
     body: (
       <p>
-        תחילה, יש להוציא בקשה לרישיון נהיגה, אנא תמלאו את הטופס הבא:
+        ראשית יש לבצע את מבחן התאוריה המעשית,
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.theorytest.org.il/"
+        >
+          <Button variant="link">קישור לקביעת מועד.</Button>
+        </a>
+      </p>
+    ),
+    icon: CarIcon,
+  },
+  {
+    label: 'צעד שני',
+    body: (
+      <p>
+        יש למלא את טופס בקשת רישיון הנהיגה,
         <a
           target="_blank"
           rel="noreferrer"
@@ -27,21 +42,9 @@ const steps = [
     icon: FormInputIcon,
   },
   {
-    label: 'צעד שני',
-    body: <p>לאחר מכן יש לבצע בדיקת ראייה על ידי אופטומטריסט.</p>,
-    icon: EyeIcon,
-  },
-  {
     label: 'צעד שלישי',
-    body: (
-      <p>
-        לבסוף, תכתבו לנו
-        <a target="_blank" rel="noreferrer" href={siteConfig.links.whatsapp}>
-          <Button variant="link">בווטסאפ.</Button>
-        </a>
-      </p>
-    ),
-    icon: PhoneCallIcon,
+    body: <p>לבסוף יש לבצע בדיקת ראייה לרכב פרטי מסוג B.</p>,
+    icon: EyeIcon,
   },
 ] satisfies StepItem[]
 
