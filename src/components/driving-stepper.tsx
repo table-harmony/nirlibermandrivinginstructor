@@ -51,7 +51,7 @@ const steps = [
 export function DrivingStepper() {
   return (
     <div className="flex flex-col gap-4">
-      <Stepper orientation="vertical" initialStep={0} steps={steps}>
+      <Stepper orientation="horizontal" initialStep={0} steps={steps}>
         {steps.map((stepProps, index) => {
           return (
             <Step key={index} {...stepProps}>
