@@ -2,6 +2,8 @@
 import MainLayout from '@/layouts/main-layout.astro'
 
 import { DrivingStepper } from '@/components/driving-stepper'
+
+import { Image } from 'astro:assets'
 ---
 
 <MainLayout title="ניר ליברמן - צעדים">
@@ -21,7 +23,23 @@ import { DrivingStepper } from '@/components/driving-stepper'
       </p>
     </div>
   </section>
-  <div class="container pb-12 sm:pb-20">
+  <div class="container px-20 pb-12 pt-10 sm:pb-20">
+    <div class="relative">
+      <Image
+        alt="try-it"
+        width="175"
+        height="175"
+        src="/images/try-it1.png"
+        class="absolute -left-10 -top-10 hidden dark:sm:block"
+      />
+      <Image
+        alt="try-it"
+        width="175"
+        height="175"
+        src="/images/try-it.png"
+        class="absolute -left-10 -top-10 hidden dark:hidden sm:block"
+      />
+    </div>
     <DrivingStepper client:load />
   </div>
 </MainLayout>

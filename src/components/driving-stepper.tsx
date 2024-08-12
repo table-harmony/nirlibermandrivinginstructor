@@ -52,7 +52,7 @@ export function DrivingStepper() {
         {steps.map((stepProps, index) => {
           return (
             <Step key={index} {...stepProps}>
-              <div className="my-4 h-40 rounded-md border border-border p-4">
+              <div className="my-4 min-h-40 rounded-md border border-border p-4">
                 {stepProps.body}
               </div>
             </Step>
