@@ -9,7 +9,7 @@ import { Image } from 'astro:assets'
         {/* First Column */}
         <div class="space-y-4 md:space-y-6">
           <Image
-            class="h-full w-auto overflow-hidden rounded-xl object-cover"
+            class="h-full w-auto select-none overflow-hidden rounded-xl object-cover"
             src="/images/gallery/image.png"
             alt="gallery"
             width={800}
@@ -17,7 +17,7 @@ import { Image } from 'astro:assets'
             loading="lazy"
           />
           <Image
-            class="h-52 rounded-xl object-cover"
+            class="h-52 select-none rounded-xl object-cover"
             src="/images/gallery/image1.png"
             alt="gallery"
             width={800}
@@ -30,7 +30,7 @@ import { Image } from 'astro:assets'
         <div class="space-y-4 md:space-y-6">
           <div class="h-48 overflow-hidden rounded-xl">
             <Image
-              class="h-full w-full object-cover"
+              class="h-full w-full select-none object-cover"
               src="/images/gallery/image2.png"
               alt="gallery"
               width={800}
@@ -39,7 +39,7 @@ import { Image } from 'astro:assets'
             />
           </div>
           <Image
-            class="rounded-xl"
+            class="select-none rounded-xl"
             src="/images/gallery/image3.png"
             alt="gallery"
             width={800}
@@ -48,7 +48,7 @@ import { Image } from 'astro:assets'
           />
           <div class="relative h-48 overflow-hidden rounded-xl">
             <Image
-              class="h-full w-full object-cover"
+              class="h-full w-full select-none object-cover"
               src="/images/gallery/image9.png"
               alt="gallery"
               width={1260}
@@ -61,7 +61,7 @@ import { Image } from 'astro:assets'
         <div class="space-y-4 md:space-y-6">
           <div class="h-56 overflow-hidden rounded-xl">
             <Image
-              class="h-full w-full object-cover"
+              class="h-full w-full select-none object-cover"
               src="/images/gallery/image5.png"
               alt="gallery"
               width={800}
@@ -71,11 +71,12 @@ import { Image } from 'astro:assets'
           </div>
           <div class="h-80 w-full overflow-hidden rounded-xl xl:h-[28rem]">
             <Image
-              class="h-full w-full object-cover"
+              class="h-full w-full select-none object-cover"
               src="/images/gallery/image6.png"
               alt="gallery"
               width={801}
               height={2477}
+              loading="lazy"
             />
           </div>
         </div>
@@ -87,14 +88,14 @@ import { Image } from 'astro:assets'
             alt="gallery"
             width={800}
             height={900}
-            class="rounded-xl"
+            class="select-none rounded-xl"
           />
           <Image
             src="/images/gallery/image8.png"
             alt="gallery"
             width={800}
             height={900}
-            class="rounded-xl"
+            class="select-none rounded-xl"
           />
         </div>
       </div>
@@ -102,7 +103,7 @@ import { Image } from 'astro:assets'
   </div>
   <div class="container flex flex-col items-center gap-6 sm:hidden">
     <Image
-      class="h-64 rounded-xl object-cover"
+      class="h-80 rounded-xl object-cover"
       src="/images/gallery/image.png"
       alt="logo"
       width={800}
@@ -110,14 +111,14 @@ import { Image } from 'astro:assets'
       loading="lazy"
     />
     <Image
-      class="h-52 rounded-xl object-cover"
+      class="h-96 rounded-xl object-cover"
       src="/images/gallery/image1.png"
       alt="gallery"
       width={800}
       height={1334}
     />
     <Image
-      class="h-48 rounded-xl object-cover"
+      class="h-72 rounded-xl object-cover"
       src="/images/gallery/image2.png"
       alt="gallery"
       width={800}
@@ -133,14 +134,14 @@ import { Image } from 'astro:assets'
       loading="lazy"
     />
     <Image
-      class="h-56 rounded-xl object-cover"
+      class="h-72 rounded-xl object-cover"
       src="/images/gallery/image9.png"
       alt="gallery"
       width={1260}
       height={750}
     />
     <Image
-      class="h-42 rounded-xl object-cover"
+      class="h-96 rounded-xl object-cover"
       src="/images/gallery/image5.png"
       alt="gallery"
       width={800}

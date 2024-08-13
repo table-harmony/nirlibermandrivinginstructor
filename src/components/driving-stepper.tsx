@@ -8,42 +8,48 @@ import { Button } from '@/components/ui/button'
 import { CarIcon, EyeIcon, FormInputIcon } from 'lucide-react'
 import Confetti from '@/components/ui/confetti'
 
+const StepOne = () => {
+  return (
+    <p>
+      ראשית יש לבצע את מבחן התאוריה המעשית,
+      <a target="_blank" rel="noreferrer" href="https://www.theorytest.org.il/">
+        <Button variant="link">קישור לקביעת מועד.</Button>
+      </a>
+    </p>
+  )
+}
+const StepTwo = () => {
+  return (
+    <p>
+      יש למלא את טופס בקשת רישיון הנהיגה,
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://govforms.gov.il/mw/forms/RishumTheory@mot.gov.il#!requestDetails"
+      >
+        <Button variant="link">קישור לטופס.</Button>
+      </a>
+    </p>
+  )
+}
+const StepThree = () => {
+  return <p>לבסוף יש לבצע בדיקת ראייה לרכב פרטי מסוג B.</p>
+}
+
 const steps = [
   {
     label: 'צעד ראשון',
-    body: (
-      <p>
-        ראשית יש לבצע את מבחן התאוריה המעשית,
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://www.theorytest.org.il/"
-        >
-          <Button variant="link">קישור לקביעת מועד.</Button>
-        </a>
-      </p>
-    ),
+    body: <StepOne />,
     icon: CarIcon,
   },
   {
     label: 'צעד שני',
-    body: (
-      <p>
-        יש למלא את טופס בקשת רישיון הנהיגה,
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://govforms.gov.il/mw/forms/RishumTheory@mot.gov.il#!requestDetails"
-        >
-          <Button variant="link">קישור לטופס.</Button>
-        </a>
-      </p>
-    ),
+    body: <StepTwo />,
     icon: FormInputIcon,
   },
   {
     label: 'צעד שלישי',
-    body: <p>לבסוף יש לבצע בדיקת ראייה לרכב פרטי מסוג B.</p>,
+    body: <StepThree />,
     icon: EyeIcon,
   },
 ] satisfies StepItem[]
@@ -55,7 +61,7 @@ export function DrivingStepper() {
         {steps.map((stepProps, index) => {
           return (
             <Step key={index} {...stepProps}>
-              <div className="my-4 min-h-40 rounded-md border border-border p-4">
+              <div className="min-h-40 rounded-md border border-border p-4">
                 {stepProps.body}
               </div>
             </Step>
@@ -88,7 +94,7 @@ const Footer = () => {
       )}
       <div className="flex w-full justify-end gap-2">
         {hasCompletedAllSteps ? (
-          <Button size="lg" onClick={resetSteps}>
+          <Button className="select-none" onClick={resetSteps}>
             לאתחל
           </Button>
         ) : (
@@ -97,11 +103,11 @@ const Footer = () => {
               disabled={isDisabledStep}
               onClick={prevStep}
               variant="secondary"
-              size="lg"
+              className="select-none"
             >
               קודם
             </Button>
-            <Button size="lg" onClick={nextStep}>
+            <Button className="select-none" onClick={nextStep}>
               {isLastStep ? 'סיום' : 'הבא'}
             </Button>
           </>
