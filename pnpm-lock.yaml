@@ -38,6 +38,9 @@ importers:
       astro:
         specifier: ^4.13.3
         version: 4.13.3(@types/node@22.2.0)(typescript@5.5.4)
+      astro-font:
+        specifier: ^0.1.81
+        version: 0.1.81
       canvas-confetti:
         specifier: ^1.9.3
         version: 1.9.3
@@ -966,6 +969,9 @@ packages:
 
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
+
+  astro-font@0.1.81:
+    resolution: {integrity: sha512-rbrv/+ZSYdgyjBlhkAqfCjMxqqo6iEwnSo/rAdDt/POILsF0ChxMFhefIIzKEukrRGtVjEj1lrLRYk+AdV9scQ==}
 
   astro@4.13.3:
     resolution: {integrity: sha512-MyhmM0v5sphiVwxAm5jjKxWeuPZijWPJ8Ajdign9QzEmLWSH8vUYIJWx/dWRQ6vF1I0jXrksoj3wtw5nzXt9nw==}
@@ -3376,6 +3382,8 @@ snapshots:
       dequal: 2.0.3
 
   array-iterate@2.0.1: {}
+
+  astro-font@0.1.81: {}
 
   astro@4.13.3(@types/node@22.2.0)(typescript@5.5.4):
     dependencies:
