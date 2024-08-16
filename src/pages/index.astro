@@ -5,7 +5,7 @@ import Hero from '@/components/landing/hero.astro'
 import Info from '@/components/landing/info.astro'
 import Testimonials from '@/components/landing/testimonials.astro'
 import Features from '@/components/landing/features.astro'
-import Gallery from '@/components/landing/gallery.astro'
+import { Gallery } from '@/components/landing/gallery'
 ---
 
 <MainLayout>
@@ -13,5 +13,5 @@ import Gallery from '@/components/landing/gallery.astro'
   <Info />
   <Testimonials />
   <Features />
-  <Gallery />
+  <Gallery client:visible />
 </MainLayout>
