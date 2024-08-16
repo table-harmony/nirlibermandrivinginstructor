@@ -1,0 +1,22 @@
+---
+import { Button } from '@/components/ui/button'
+import BaseLayout from '@/layouts/base-layout.astro'
+import { Image } from 'astro:assets'
+---
+
+<BaseLayout>
+  <div
+    class="container flex flex-col items-center justify-center space-y-10 py-20"
+  >
+    <h1 class="text-5xl font-bold">לא נמצא</h1>
+    <Image
+      src="/assets/not-found.svg"
+      width="300"
+      height="300"
+      alt="not found"
+    />
+    <a href="/">
+      <Button size="lg">בחזרה</Button>
+    </a>
+  </div>
+</BaseLayout>
