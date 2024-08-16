@@ -1,5 +1,6 @@
 ---
 import { Button } from '@/components/ui/button'
+import { siteConfig } from '@/config/site'
 import { Image } from 'astro:assets'
 ---
 
@@ -20,10 +21,14 @@ import { Image } from 'astro:assets'
           שיעורים באוירה נינוחה וצעירה שמותאמת לכל אחד ואחת.
         </p>
       </div>
-
-      <a href="/get-started">
-        <Button size="lg">צעדים</Button>
-      </a>
+      <div class="flex gap-2">
+        <a href={siteConfig.links.bezeq} target="_blank">
+          <Button variant="outline" size="lg"> העסק </Button>
+        </a>
+        <a href={siteConfig.links.whatsapp} target="_blank">
+          <Button size="lg"> צרו קשר </Button>
+        </a>
+      </div>
     </div>
     <div class="relative">
       <Image

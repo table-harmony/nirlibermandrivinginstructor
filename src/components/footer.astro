@@ -3,7 +3,7 @@ import { siteConfig } from '@/config/site'
 
 import { Button } from '@/components/ui/button'
 import { BoldIcon, MessageCircleIcon } from 'lucide-react'
-import { Image } from 'astro:assets'
+import { ModeToggle } from './mode-toggle'
 ---
 
 <footer>
@@ -30,9 +30,9 @@ import { Image } from 'astro:assets'
         <p class="text-sm leading-5 text-muted-foreground">
           © ניר ליברמן {new Date().getFullYear()}
         </p>
-        <a href="/">
-          <Image src="/favicon.ico" alt="logo" width="36" height="36" />
-        </a>
+        <div class="flex gap-2">
+          <ModeToggle client:visible />
+        </div>
       </div>
     </div>
   </div>

@@ -1,6 +1,8 @@
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
 import { Button } from './ui/button'
 import { useState } from 'react'
+import { ModeToggle } from './mode-toggle'
+import { siteConfig } from '@/config/site'
 
 export function MobileNav() {
   const [open, setOpen] = useState(false)
@@ -51,9 +53,28 @@ export function MobileNav() {
 
             <span className="font-bold">ניר ליברמן</span>
           </a>
-          <div className="flex flex-col space-y-3">
+          <div className="mb-10 flex flex-col space-y-3">
+            <span className="font-bold">דפים</span>
+            <a href="/">בית</a>
             <a href="/get-started">צעדים</a>
           </div>
+
+          <div className="flex flex-col space-y-3">
+            <span className="font-bold">קישורים</span>
+            <a target="_blank" rel="noreferrer" href={siteConfig.links.bezeq}>
+              עסק
+            </a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={siteConfig.links.whatsapp}
+            >
+              וואטסאפ
+            </a>
+          </div>
+        </div>
+        <div className="w-fit">
+          <ModeToggle />
         </div>
       </SheetContent>
     </Sheet>
