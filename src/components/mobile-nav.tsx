@@ -52,7 +52,6 @@ export function MobileNav() {
             <span className="font-bold">ניר ליברמן</span>
           </a>
           <div className="flex flex-col space-y-3">
-            <a href="/about">אודות</a>
             <a href="/get-started">צעדים</a>
           </div>
         </div>
