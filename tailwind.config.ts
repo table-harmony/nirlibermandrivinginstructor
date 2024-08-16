@@ -12,6 +12,7 @@ const config = {
     extend: {
       fontFamily: {
         sans: ['Rubik'],
+        spray: ['Rubik Spray Paint'],
       },
       height: {
         18: '4.5rem',

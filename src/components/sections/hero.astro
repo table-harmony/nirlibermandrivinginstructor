@@ -1,49 +1,47 @@
 ---
-import { siteConfig } from '@/config/site'
-
-import { cn } from '@/lib/utils'
-import { buttonVariants } from '@/components/ui/button'
-
-import { BoldIcon } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Image } from 'astro:assets'
 ---
 
 <section id="hero" class="container py-12 sm:py-20 lg:py-20">
-  <div class="flex flex-col items-center space-y-6 text-center">
-    <a
-      href={siteConfig.links.bezeq}
-      class={cn(buttonVariants({ variant: 'outline', size: 'sm' }))}
-      target="_blank"
-    >
-      <span class="ml-3">🎉</span>
-      היכרות ב{' '}
-      <BoldIcon className="mr-2 size-4" />
-    </a>
-    <h1
-      class="text-gradient text-balance text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl"
-    >
-      הדרך שלי - ההצלחה שלך!
-    </h1>
+  <div class="flex flex-col items-center justify-around space-y-10 md:flex-row">
+    <div class="flex flex-col space-y-5 md:space-y-10">
+      <div class="space-y-5">
+        <h1 class="text-4xl font-bold md:text-5xl lg:text-6xl">
+          הדרך שלי -
+          <span class="text-gradient font-spray block font-thin"
+            >ההצלחה שלך !</span
+          >
+        </h1>
+        <p
+          class="max-w-lg text-balance text-sm text-muted-foreground md:text-base"
+        >
+          לימוד נהיגה ברמה אחרת, באופן מקצועי ללא פשרות ובשיטת לימוד ייחודית.
+          שיעורים באוירה נינוחה וצעירה שמותאמת לכל אחד ואחת.
+        </p>
+      </div>
 
-    <p
-      class="max-w-2xl text-balance leading-normal text-muted-foreground sm:text-xl sm:leading-8"
-    >
-      לימוד נהיגה ברמה אחרת, באופן מקצועי ללא פשרות ובשיטת לימוד ייחודית.
-      שיעורים באוירה נינוחה וצעירה שמותאמת לכל אחד ואחת.
-    </p>
-
-    <div class="flex justify-center gap-4">
-      <a
-        href="#testimonials"
-        class={cn(
-          buttonVariants({
-            variant: 'outline',
-            size: 'lg',
-          }),
-        )}
-      >
-        ביקורות
-      </a>
-      <a href="/get-started" class={buttonVariants({ size: 'lg' })}> צעדים </a>
+      <div class="flex gap-2">
+        <Button size="lg" variant="outline">אודות</Button>
+        <Button size="lg">צעדים</Button>
+      </div>
+    </div>
+    <div class="relative">
+      <Image
+        src="/hero-arrow.svg"
+        width="175"
+        height="175"
+        alt="hero-arrow"
+        class="absolute -right-24 -top-8 hidden md:block"
+      />
+      <Image
+        src="https://cdn.prod.website-files.com/63fe01c53a4b335499885295/6515c409095110cfc4e3baba_Hero%201C.png"
+        loading="lazy"
+        width="600"
+        height="600"
+        alt="hero image"
+        class="rounded-lg"
+      />
     </div>
   </div>
 </section>
