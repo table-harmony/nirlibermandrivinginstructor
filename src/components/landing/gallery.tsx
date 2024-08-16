@@ -11,13 +11,13 @@ export function Gallery() {
     <section
       id="gallery"
       className="container flex justify-center py-12 sm:py-20"
+      dir="ltr"
     >
       <Carousel
         opts={{
           align: 'center',
         }}
         className="w-full max-w-xl"
-        dir="ltr"
       >
         <CarouselContent>
           {Array.from({ length: 8 }).map((_, index) => (
@@ -30,8 +30,10 @@ export function Gallery() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <div className="hidden sm:block">
+          <CarouselPrevious />
+          <CarouselNext />
+        </div>
       </Carousel>
     </section>
   )
