@@ -1,7 +1,6 @@
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
 import { Button } from './ui/button'
 import { useState } from 'react'
-import { ModeToggle } from './mode-toggle'
 
 export function MobileNav() {
   const [open, setOpen] = useState(false)
@@ -56,9 +55,6 @@ export function MobileNav() {
             <a href="/about">אודות</a>
             <a href="/get-started">צעדים</a>
           </div>
-        </div>
-        <div className="w-fit">
-          <ModeToggle />
         </div>
       </SheetContent>
     </Sheet>
