@@ -1,6 +1,7 @@
 export const siteConfig = {
   title: 'ניר ליברמן - מורה נהיגה',
-  description: 'ניר ליברמן - מורה נהיגה',
+  description: 'שיעורים באוירה נינוחה שמותאמת לכל אחד ואחת',
+  image: '/hero.webp',
   url: 'https://nirlibermandrivinginstructor.vercel.app',
   author: 'table-harmony',
   links: {
