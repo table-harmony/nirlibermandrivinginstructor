@@ -25,7 +25,10 @@ export function Gallery() {
               <img
                 className="h-72 w-56 select-none rounded-md object-cover transition-all hover:scale-105"
                 alt={`gallery image number ${index}`}
-                src={`/gallery/image${index}.png`}
+                src={`/gallery/image${index}.webp`}
+                width={224}
+                height={288}
+                loading="lazy"
               />
             </CarouselItem>
           ))}

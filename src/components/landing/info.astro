@@ -17,11 +17,13 @@ import { Separator } from '@/components/ui/separator'
           באוירה נינוחה וצעירה שמותאמת לכל אחד ואחת.</q
         >
         <Image
-          src="/profile.jpg"
-          width="75"
-          height="75"
+          src="/profile.webp"
+          width={75}
+          height={75}
           alt="profile"
           class="rounded-md"
+          format="webp"
+          quality={80}
         />
         <p class="pt-4 text-center text-lg font-bold">ניר ליברמן</p>
         <span class="text-center">מורה נהיגה בחיפה</span>
@@ -35,11 +37,14 @@ import { Separator } from '@/components/ui/separator'
         className="block w-64 bg-blue-400 md:hidden"
       />
       <Image
-        src="/car.jpeg"
+        src="/car.webp"
         class="rounded-md"
-        width="500"
-        height="500"
+        width={400}
+        height={400}
         alt="car"
+        loading="eager"
+        format="webp"
+        quality={80}
       />
     </div>
   </div>

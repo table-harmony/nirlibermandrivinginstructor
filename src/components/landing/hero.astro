@@ -10,9 +10,7 @@ import { Image } from 'astro:assets'
       <div class="space-y-5">
         <h1 class="text-4xl font-bold md:text-5xl lg:text-6xl">
           הדרך שלי -
-          <span class="text-gradient block font-spray font-thin"
-            >ההצלחה שלך !</span
-          >
+          <span class="text-gradient block">ההצלחה שלך !</span>
         </h1>
         <p
           class="max-w-lg text-balance text-sm text-muted-foreground md:text-base"
@@ -40,12 +38,17 @@ import { Image } from 'astro:assets'
       />
 
       <Image
-        src="/hero.png"
-        loading="lazy"
-        width="500"
-        height="375"
+        src="/hero.webp"
+        loading="eager"
+        width={450}
+        height={302}
         alt="hero image"
         class="rounded-lg"
+        format="webp"
+        quality={75}
+        decoding="async"
+        fetchpriority="high"
+        sizes="(max-width: 768px) 100vw, 450px"
       />
     </div>
   </div>
