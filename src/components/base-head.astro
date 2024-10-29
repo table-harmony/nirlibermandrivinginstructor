@@ -2,7 +2,7 @@
 import { siteConfig } from '@/config/site'
 import { ViewTransitions } from 'astro:transitions'
 
-import { AstroFont } from 'astro-font'
+import '@fontsource/twinkle-star'
 
 interface Props {
   title?: string
@@ -21,38 +21,7 @@ const {
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
-
-<AstroFont
-  config={[
-    {
-      src: [],
-      name: 'Rubik',
-      // Google Fonts URL
-      googleFontsURL:
-        'https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap&subset=hebrew',
-      preload: true,
-      display: 'swap',
-      fallback: 'sans-serif',
-    },
-  ]}
-/>
-
-<AstroFont
-  config={[
-    {
-      src: [],
-      name: 'Rubik Spray Paint',
-      // Google Fonts URL
-      googleFontsURL:
-        'https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap&subset=hebrew',
-      preload: true,
-      display: 'swap',
-      fallback: 'sans-serif',
-    },
-  ]}
-/>
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
@@ -67,13 +36,10 @@ const {
 <meta property="og:image" content={image} />
 
 <!-- Twitter -->
-<meta property="twitter:card" content="/hero.png" />
+<meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content="הדרך שלי - ההצלחה שלך" />
-<meta
-  property="twitter:description"
-  content="ניר ליברמן - מורה נהיגה בחיפה והסביבה"
-/>
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={image} />
 
 <!-- Dark mode with prevent flickering flash between navigations -->
@@ -105,3 +71,5 @@ const {
 </script>
 
 <ViewTransitions />
+
+<link rel="preload" as="image" href="/hero.webp" type="image/webp" />

@@ -1,3 +1,5 @@
+import defaultTheme from 'tailwindcss/defaultTheme'
+
 const config = {
   darkMode: ['class'],
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -11,8 +13,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ['Rubik'],
-        spray: ['Rubik Spray Paint'],
+        sans: [...defaultTheme.fontFamily.sans],
       },
       height: {
         18: '4.5rem',
